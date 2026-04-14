@@ -75,7 +75,7 @@ function IsJSONABLE(data){
     }
 }
 // post request
-async function PostRequest(event,element,callback=null){
+async function PostRequest(event,element,callback=null,btn_text=null){
   try{
       event.preventDefault();
  let inputs=element.querySelectorAll('.inp.required');
@@ -117,10 +117,18 @@ async function PostRequest(event,element,callback=null){
  }
  
  if(!isEmpty){
-  WrapBtnText(element.querySelector('button'));
-    // element.querySelector('button').classList.add('active');
-    // BtnLoader(element.querySelector('button'));
-    ActionLoader();
+    // loading state
+   let post_btn=element.querySelector('button.post');
+   if(post_btn){
+    let data_text=post_btn.dataset.text;
+    if(!data_text){
+        post_btn.dataset.text=post_btn.innerHTML;
+    }
+     post_btn.classList.toggle('disabled');
+     post_btn.innerHTML=btn_text ?? 'Processing...';
+   }
+
+
     let inps=element.querySelectorAll('.input');
     let form=new FormData();
    
@@ -156,12 +164,17 @@ async function PostRequest(event,element,callback=null){
         if(callback !== null){
             callback(data,event);
         }
-        HideActionLoader();
-        // element.querySelector('button').classList.remove('active');
+       if(post_btn){
+         post_btn.innerHTML=post_btn.dataset.text;
+        post_btn.classList.toggle('disabled');
+       }
      }else{
-        HideActionLoader();
+        if(post_btn){
+         post_btn.innerHTML=post_btn.dataset.text;
+        post_btn.classList.toggle('disabled');
+       }
         CreateNotify('error','Internal Error: ' + response.status + ' Error');
-        //   element.querySelector('button').classList.remove('active');
+        
      }
      
  }
@@ -198,46 +211,22 @@ function CreateNotify(status,message){
   let section=document.createElement('section');
   section.classList.add('notify');
   section.classList.add(status);
-  let icon=status == 'success' ? `<div class="c-green">
- <div style="color:white">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
-<path d="M16.0303 10.0303C16.3232 9.73744 16.3232 9.26256 16.0303 8.96967C15.7374 8.67678 15.2626 8.67678 14.9697 8.96967L10.5 13.4393L9.03033 11.9697C8.73744 11.6768 8.26256 11.6768 7.96967 11.9697C7.67678 12.2626 7.67678 12.7374 7.96967 13.0303L9.96967 15.0303C10.2626 15.3232 10.7374 15.3232 11.0303 15.0303L16.0303 10.0303Z" fill="CurrentColor"></path>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75C17.1086 2.75 21.25 6.89137 21.25 12C21.25 17.1086 17.1086 21.25 12 21.25C6.89137 21.25 2.75 17.1086 2.75 12Z" fill="CurrentColor"></path>
-</svg>
- </div>
 
-  </div>` : `<div class="c-red">
-  <div style="color:white">
-  <svg  width="20" height="20" viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 17.75C12.4142 17.75 12.75 17.4142 12.75 17V11C12.75 10.5858 12.4142 10.25 12 10.25C11.5858 10.25 11.25 10.5858 11.25 11V17C11.25 17.4142 11.5858 17.75 12 17.75Z" fill="CurrentColor"></path>
-<path d="M12 7C12.5523 7 13 7.44772 13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7Z" fill="CurrentColor"></path>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75Z" fill="CurrentColor"></path>
-</svg>
-</div>
-
-
-  </div>`;
   section.innerHTML=` <div class="row g-5 w-full p-5 body space-between align-center">
-            ${icon}
-            <div class="message m-right-auto">
+           
+             <div class="column m-right-auto g-5">
+              <strong style="text-transform:capitalize;" class="desc">
+            ${status}
+        </strong>
+            <div class="message">
             ${message}
         </div>
+             </div>
         <div onclick="HideNotify()" class="pc-pointer m-bottom-auto no-select" style="font-size:2rem">&times;</div>
-        </div>
-        <div class="footer">
-            <span></span>
         </div>`;
        
-        section.addEventListener('touchstart',function(){
-       ScheduledTimeout=setTimeout(()=>{
-       clearTimeout(RemoveNotify);
-       section.querySelector('.footer span').style.animationPlayState='paused';
-       },500)
-
-        });
-        section.addEventListener('touchend',()=>{
-            clearTimeout(ScheduledTimeout);
-        })
+       
+       
        
         document.body.appendChild(section);
         let RemoveNotify=setTimeout(()=>{
@@ -638,9 +627,11 @@ function AutoFill(val,input,element){
 // calling functions
 
 
-
-    HideLoading();
+window.addEventListener('load',()=>{
+       HideLoading();
     SetWindowHeight();
     UnEmpty();
     
+});
+ 
 

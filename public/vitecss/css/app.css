@@ -1,19 +1,33 @@
 :root{
+    /* primary hsl number */
+    --primary-hsl:208;
     /* primary color */
-    --primary:#0A1A6E;
+    --primary:hsl(var(--primary-hsl),70%,50%);
     /* light primary color */
-    --primary-light:blue;
+    --primary-light:hsl(var(--primary-hsl),100%,70%);
      /* light primary color */
-    --primary-lighter:aqua;
+    --primary-lighter:hsl(var(--primary-hsl),100%,80%);
+      /* dark primary color */
+     --primary-dark:hsl(var(--primary-hsl),100%,20%);
+       /* darker primary color */
+     --primary-darker:hsl(var(--primary-hsl),100%,10%);
+       /* background color */
+    --bg:whitesmoke;
+      /* light background color */
+    --bg-light:white;
+     /* text color */
+    --text:black;
+     /* primary font */
+    --font:'dm sans';
     /* color on element with background as primary color */
     --primary-text:white;
     /* rgt hex value for text */
-      --rgt:255,255,255;
+      --rgt:0,0,0;
       /* rgb hex value for background */
-       --rgb:0,0,0;
+       --rgb:255,255,255;
     /* transparent of primary color */
-    --primary-transparent:rgb(10, 26, 110,0.1);
-    --primary-rgb:10, 26, 110;
+    --primary-transparent:rgb(31, 111, 181,0.1);
+    --primary-rgb:31, 111, 181;
     --primary-001:rgba(var(--primary-rgb),0.01);
     --primary-002:rgba(var(--primary-rgb),0.02);
     --primary-003:rgba(var(--primary-rgb),0.03);
@@ -32,72 +46,65 @@
     --primary-07:rgba(var(--primary-rgb),0.7);
     --primary-08:rgba(var(--primary-rgb),0.8);
     --primary-09:rgba(var(--primary-rgb),0.9);
+    --primary-10:rgb(var(--primary-rgb));
      /* rgb */
-    --rgb-001:rgb(var(--rgb),0.01);
-    --rgb-002:rgb(var(--rgb),0.02);
-    --rgb-003:rgb(var(--rgb),0.03);
-    --rgb-004:rgb(var(--rgb),0.04);
-    --rgb-005:rgb(var(--rgb),0.05);
-    --rgb-006:rgb(var(--rgb),0.06);
-    --rgb-007:rgb(var(--rgb),0.07);
-    --rgb-08:rgb(var(--rgb),0.08);
-    --rgb-009:rgb(var(--rgb),0.09);
-    --rgb-01:rgb(var(--rgb),0.1);
-    --rgb-02:rgb(var(--rgb),0.2);
-    --rgb-03:rgb(var(--rgb),0.3);
-    --rgb-04:rgb(var(--rgb),0.4);
-    --rgb-05:rgb(var(--rgb),0.5);
-    --rgb-06:rgb(var(--rgb),0.6);
-    --rgb-07:rgb(var(--rgb),0.7);
-    --rgb-08:rgb(var(--rgb),0.8);
-    --rgb-09:rgb(var(--rgb),0.9);
+    --rgb-001:rgba(var(--rgb),0.01);
+    --rgb-002:rgba(var(--rgb),0.02);
+    --rgb-003:rgba(var(--rgb),0.03);
+    --rgb-004:rgba(var(--rgb),0.04);
+    --rgb-005:rgba(var(--rgb),0.05);
+    --rgb-006:rgba(var(--rgb),0.06);
+    --rgb-007:rgba(var(--rgb),0.07);
+    --rgb-08:rgba(var(--rgb),0.08);
+    --rgb-009:rgba(var(--rgb),0.09);
+    --rgb-01:rgba(var(--rgb),0.1);
+    --rgb-02:rgba(var(--rgb),0.2);
+    --rgb-03:rgba(var(--rgb),0.3);
+    --rgb-04:rgba(var(--rgb),0.4);
+    --rgb-05:rgba(var(--rgb),0.5);
+    --rgb-06:rgba(var(--rgb),0.6);
+    --rgb-07:rgba(var(--rgb),0.7);
+    --rgb-08:rgba(var(--rgb),0.8);
+    --rgb-09:rgba(var(--rgb),0.9);
+    --rgb-10:rgb(var(--rgb));
     /* rgt */
-    --rgt-001:rgb(var(--rgt),0.01);
-    --rgt-002:rgb(var(--rgt),0.02);
-    --rgt-003:rgb(var(--rgt),0.03);
-    --rgt-004:rgb(var(--rgt),0.04);
-    --rgt-005:rgb(var(--rgt),0.05);
-    --rgt-006:rgb(var(--rgt),0.06);
-    --rgt-007:rgb(var(--rgt),0.07);
-    --rgt-08:rgb(var(--rgt),0.08);
-    --rgt-009:rgb(var(--rgt),0.09);
-    --rgt-01:rgb(var(--rgt),0.1);
-    --rgt-02:rgb(var(--rgt),0.2);
-    --rgt-03:rgb(var(--rgt),0.3);
-    --rgt-04:rgb(var(--rgt),0.4);
-    --rgt-05:rgb(var(--rgt),0.5);
-    --rgt-06:rgb(var(--rgt),0.6);
-    --rgt-07:rgb(var(--rgt),0.7);
-    --rgt-08:rgb(var(--rgt),0.8);
-    --rgt-09:rgb(var(--rgt),0.9);
-    /* darker primary color */
-     --primary-dark:#010727;
+    --rgt-001:rgba(var(--rgt),0.01);
+    --rgt-002:rgba(var(--rgt),0.02);
+    --rgt-003:rgba(var(--rgt),0.03);
+    --rgt-004:rgba(var(--rgt),0.04);
+    --rgt-005:rgba(var(--rgt),0.05);
+    --rgt-006:rgba(var(--rgt),0.06);
+    --rgt-007:rgba(var(--rgt),0.07);
+    --rgt-08:rgba(var(--rgt),0.08);
+    --rgt-009:rgba(var(--rgt),0.09);
+    --rgt-01:rgba(var(--rgt),0.1);
+    --rgt-02:rgba(var(--rgt),0.2);
+    --rgt-03:rgba(var(--rgt),0.3);
+    --rgt-04:rgba(var(--rgt),0.4);
+    --rgt-05:rgba(var(--rgt),0.5);
+    --rgt-06:rgba(var(--rgt),0.6);
+    --rgt-07:rgba(var(--rgt),0.7);
+    --rgt-08:rgba(var(--rgt),0.8);
+    --rgt-09:rgba(var(--rgt),0.9);
+    --rgt-10:rgb(var(--rgt));
      /* secondary color */
-    --secondary:#d40c64;
+    --secondary:#0b1f33;
     /* secondary light */
     --secondary-light:rgba(212, 12, 100, 0.1);
     /* secondary dark */
     --secondary-dark:#2a0012;
     /* secondary text color */
     --secondary-text:white;
-    /* primary font */
-    --font:'montserrat';
-    /* background color */
-    --bg:#02020D;
     /* bg secondary */
     --bg-secondary:rgb(108,92,230);
     /* bg secondary dark */
     --bg-secondary-dark:rgb(44, 35, 107);
      /* bg secondary light */
     --bg-secondary-light:rgba(108, 92, 230,0.1);
-    /* light background color */
-    --bg-light:#070725;
     /* lighter bg */
     --bg-lighter:#1b3461;
     /* dark background color */
     --bg-dark:rgb(108, 92, 230);
-    /* text color */
-    --text:black;
     /* lower z index */
     --z-index-low:3000;
     /* average z index */
@@ -120,15 +127,7 @@
     --dark-gold:#554c19;
     /* gradient green color */
     --green-gradient:linear-gradient(to bottom left,greenyellow,var(--green),var(--green));
-    /* box shadoe for primary color  */
-    --box-shadow-primary:0 10px 10px -5px rgba(0,191,166,0.2);
-    /* box shadow for red */
-    --box-shadow-red:0 10px 10px -5px rgba(255,0,0,0.2);
-    /* svg for loading states on submitting buttons */
-    --svg:url('data:image/svg+xml,%3Csvg%20fill%3D%22white%22%20height%3D%2230%22%20width%3D%2230%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%223%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_6RAU%22%20begin%3D%220%3Bspinner_GErc.end-0.5s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%2216.50%22%20cy%3D%224.21%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_khXL%22%20begin%3D%22spinner_6RAU.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%227.50%22%20cy%3D%224.21%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_GErc%22%20begin%3D%22spinner_JEaM.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%2219.79%22%20cy%3D%227.50%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_9orP%22%20begin%3D%22spinner_khXL.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%224.21%22%20cy%3D%227.50%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_JEaM%22%20begin%3D%22spinner_RwRf.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%2221.00%22%20cy%3D%2212.00%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_W8J5%22%20begin%3D%22spinner_9orP.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%223.00%22%20cy%3D%2212.00%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_RwRf%22%20begin%3D%22spinner_tByH.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%2219.79%22%20cy%3D%2216.50%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_tedm%22%20begin%3D%22spinner_W8J5.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%224.21%22%20cy%3D%2216.50%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_tByH%22%20begin%3D%22spinner_c3Lr.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%2216.50%22%20cy%3D%2219.79%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_QxRo%22%20begin%3D%22spinner_tedm.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%227.50%22%20cy%3D%2219.79%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_c3Lr%22%20begin%3D%22spinner_PW3C.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2221%22%20r%3D%220%22%3E%3Canimate%20id%3D%22spinner_PW3C%22%20begin%3D%22spinner_QxRo.begin%2B0.1s%22%20attributeName%3D%22r%22%20calcMode%3D%22spline%22%20dur%3D%220.6s%22%20values%3D%220%3B2%3B0%22%20keySplines%3D%22.27%2C.42%2C.37%2C.99%3B.53%2C0%2C.61%2C.73%22%2F%3E%3C%2Fcircle%3E%3C%2Fsvg%3E');
-    /* svg for error inloading spa */
-    --error-svg:url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%0A%3C!--%20Uploaded%20to%3A%20SVG%20Repo%2C%20www.svgrepo.com%2C%20Generator%3A%20SVG%20Repo%20Mixer%20Tools%20--%3E%0A%3Csvg%20height%3D%22800px%22%20width%3D%22800px%22%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20%0A%09%20viewBox%3D%220%200%20366.498%20366.498%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%20id%3D%22XMLID_1128_%22%3E%0A%09%3Cg%20id%3D%22XMLID_1129_%22%3E%0A%09%09%3Cpath%20id%3D%22XMLID_1130_%22%20style%3D%22fill%3A%2378B9EB%3B%22%20d%3D%22M222.061%2C80.586c0-4.603-0.53-9.078-1.53-13.374l12.635-10.265l-14.467-25.06%0A%09%09%09l-15.224%2C5.815c-6.504-6.097-14.394-10.73-23.149-13.379l-2.571-16.075h-28.937l-2.571%2C16.075%0A%09%09%09c-8.756%2C2.648-16.645%2C7.282-23.149%2C13.379l-15.222-5.815l-14.469%2C25.06l12.637%2C10.265c-1%2C4.296-1.53%2C8.771-1.53%2C13.374%0A%09%09%09c0%2C4.603%2C0.53%2C9.078%2C1.53%2C13.374l-12.637%2C10.265l14.469%2C25.06l15.222-5.815c6.504%2C6.097%2C14.394%2C10.732%2C23.149%2C13.38l2.571%2C16.074%0A%09%09%09h28.937l2.571-16.074c8.756-2.648%2C16.646-7.283%2C23.149-13.38l15.224%2C5.815l14.467-25.06L220.53%2C93.96%0A%09%09%09C221.53%2C89.664%2C222.061%2C85.188%2C222.061%2C80.586z%22%2F%3E%0A%09%09%3Cpath%20id%3D%22XMLID_1131_%22%20style%3D%22fill%3A%23006DF0%3B%22%20d%3D%22M163.287%2C8.249h-14.47l-2.571%2C16.075c-8.756%2C2.648-16.645%2C7.282-23.149%2C13.379%0A%09%09%09l-15.222-5.815l-14.469%2C25.06l12.637%2C10.265c-1%2C4.296-1.53%2C8.771-1.53%2C13.374c0%2C4.603%2C0.53%2C9.078%2C1.53%2C13.374l-12.637%2C10.265%0A%09%09%09l14.469%2C25.06l15.222-5.815c6.504%2C6.097%2C14.394%2C10.732%2C23.149%2C13.38l2.571%2C16.074h14.47V8.249z%22%2F%3E%0A%09%3C%2Fg%3E%0A%09%3Cg%20id%3D%22XMLID_1132_%22%3E%0A%09%09%3Cg%20id%3D%22XMLID_1133_%22%3E%0A%09%09%09%3Cpath%20id%3D%22XMLID_1134_%22%20style%3D%22fill%3A%23FFDA44%3B%22%20d%3D%22M353.685%2C208.567c0-5.311-0.611-10.475-1.765-15.432l14.578-11.844%0A%09%09%09%09l-16.693-28.916l-17.564%2C6.711c-7.506-7.035-16.608-12.381-26.712-15.438l-2.967-18.548h-33.389l-2.967%2C18.548%0A%09%09%09%09c-10.101%2C3.057-19.206%2C8.402-26.709%2C15.438l-17.564-6.711l-16.695%2C28.916l14.58%2C11.844c-1.154%2C4.957-1.765%2C10.121-1.765%2C15.432%0A%09%09%09%09c0%2C5.31%2C0.61%2C10.475%2C1.765%2C15.431l-14.58%2C11.845l16.695%2C28.915l17.564-6.71c7.503%2C7.035%2C16.608%2C12.383%2C26.709%2C15.438%0A%09%09%09%09l2.967%2C18.548h33.389l2.967-18.548c10.104-3.055%2C19.206-8.402%2C26.712-15.438l17.564%2C6.71l16.693-28.915l-14.578-11.845%0A%09%09%09%09C353.073%2C219.042%2C353.685%2C213.877%2C353.685%2C208.567z%22%2F%3E%0A%09%09%09%3Cpath%20id%3D%22XMLID_1135_%22%20style%3D%22fill%3A%23FF9811%3B%22%20d%3D%22M285.868%2C125.102h-16.695l-2.967%2C18.548%0A%09%09%09%09c-10.101%2C3.057-19.206%2C8.402-26.709%2C15.438l-17.564-6.711l-16.695%2C28.916l14.58%2C11.844c-1.154%2C4.957-1.765%2C10.121-1.765%2C15.432%0A%09%09%09%09c0%2C5.31%2C0.61%2C10.475%2C1.765%2C15.431l-14.58%2C11.845l16.695%2C28.915l17.564-6.71c7.503%2C7.035%2C16.608%2C12.383%2C26.709%2C15.438%0A%09%09%09%09l2.967%2C18.548h16.695V125.102z%22%2F%3E%0A%09%09%3C%2Fg%3E%0A%09%09%3Ccircle%20id%3D%22XMLID_1136_%22%20style%3D%22fill%3A%23FFFFFF%3B%22%20cx%3D%22285.869%22%20cy%3D%22208.567%22%20r%3D%2238.951%22%2F%3E%0A%09%3C%2Fg%3E%0A%09%3Cg%20id%3D%22XMLID_1137_%22%3E%0A%09%09%3Cg%20id%3D%22XMLID_1138_%22%3E%0A%09%09%09%3Cpath%20id%3D%22XMLID_1139_%22%20style%3D%22fill%3A%23006DF0%3B%22%20d%3D%22M178.135%2C258.09c0-6.37-0.732-12.568-2.117-18.518l17.495-14.213l-20.032-34.697%0A%09%09%09%09l-21.079%2C8.053c-9.005-8.443-19.93-14.859-32.052-18.526l-3.561-22.258H76.724l-3.561%2C22.258%0A%09%09%09%09c-12.122%2C3.667-23.049%2C10.083-32.054%2C18.526l-21.077-8.053L0%2C225.359l17.495%2C14.213c-1.384%2C5.949-2.119%2C12.147-2.119%2C18.518%0A%09%09%09%09c0%2C6.371%2C0.735%2C12.569%2C2.119%2C18.519L0%2C290.821l20.032%2C34.696l21.077-8.053c9.005%2C8.443%2C19.932%2C14.862%2C32.054%2C18.526l3.561%2C22.258%0A%09%09%09%09h40.065l3.561-22.258c12.122-3.664%2C23.047-10.083%2C32.052-18.526l21.079%2C8.053l20.032-34.696l-17.495-14.213%0A%09%09%09%09C177.402%2C270.659%2C178.135%2C264.461%2C178.135%2C258.09z%22%2F%3E%0A%09%09%09%3Cpath%20id%3D%22XMLID_1140_%22%20style%3D%22fill%3A%230052B4%3B%22%20d%3D%22M96.756%2C157.931H76.724l-3.561%2C22.258%0A%09%09%09%09c-12.122%2C3.667-23.049%2C10.083-32.054%2C18.526l-21.077-8.053L0%2C225.359l17.495%2C14.213c-1.384%2C5.949-2.119%2C12.147-2.119%2C18.518%0A%09%09%09%09c0%2C6.371%2C0.735%2C12.569%2C2.119%2C18.519L0%2C290.821l20.032%2C34.696l21.077-8.053c9.005%2C8.443%2C19.932%2C14.862%2C32.054%2C18.526l3.561%2C22.258%0A%09%09%09%09h20.032V157.931z%22%2F%3E%0A%09%09%3C%2Fg%3E%0A%09%09%3Ccircle%20id%3D%22XMLID_1141_%22%20style%3D%22fill%3A%23FFFFFF%3B%22%20cx%3D%2296.756%22%20cy%3D%22258.09%22%20r%3D%2249.802%22%2F%3E%0A%09%3C%2Fg%3E%0A%09%3Ccircle%20id%3D%22XMLID_1142_%22%20style%3D%22fill%3A%23FFFFFF%3B%22%20cx%3D%22163.286%22%20cy%3D%2280.586%22%20r%3D%2233.386%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E');
-    
+ 
 } 
 html,body{
     margin:0;
@@ -140,8 +139,8 @@ html,body{
 .cont{
     width:100%;
     height:50px;
-    border:1px solid var(--rgb-01);
-    background:var(--rgb-005);
+    border:1px solid var(--rgt-01);
+    background:var(--rgt-005);
     border-radius:10px;
     display:flex;
     flex-direction:row;
@@ -332,24 +331,25 @@ main{
 .notify{
     position:fixed;
     top:0;
-    
-    width:75%;
+    right:0;
+    width:70%;
     z-index:var(--z-index-high);
    margin:10px 10px 10px 20%;
-   background:var(--bg);
+   background:white;
     display:flex;
-    border-radius:10px;
+    border-radius:5px;
     flex-direction:column;
     align-items:center;
     gap:5px;
-    color:white;
-    clip-path:inset(0 round 10px);
+    color:black;
+    /* clip-path:inset(0 round 10px); */
     animation:come-in 0.5s ease forwards;
     user-select: none;
     max-width:500px;
-    border:0.5px solid;
+    /* border:0.5px solid; */
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
+    box-shadow:0 0px 10px rgba(0,0,0,0.1);
     /* padding:10px; */
     
     
@@ -394,8 +394,8 @@ main{
 }
 
 .notify.success{
-    border-color:#002501;
-    background:rgba(76, 175, 80,0.9);
+    border-left:5px solid #4caf50;
+   
 }
 .notify.success .body .icon{
    min-height:32px;
@@ -406,8 +406,12 @@ main{
 
 }
 .notify.error{
-     border-color:rgb(73, 2, 2);
-    background:rgba(255, 0, 0,0.9);
+     border-left:5px solid red;
+   
+}
+.notify.info{
+     border-left:5px solid blue;
+   
 }
 .notify.error .body .icon{
    min-height:32px;
@@ -449,7 +453,7 @@ img{
     justify-content:center;
     gap:10px;
     flex-shrink: 0;
-    border:1px solid var(--rgb-01);
+    border:1px solid var(--rgt-01);
     background:var(--bg-light);
     color:var(--text);
     user-select:none;
@@ -519,7 +523,7 @@ hr.gradient{
 .break-word{
     word-break:break-all;
 }
-.btn,input,select,textarea{
+.btn,input,select,textarea,button{
     font-family:var(--font);
     
 
@@ -623,7 +627,7 @@ button.active{
     pointer-events:none;
 }
 button.disabled{
-    filter:grayscale(90%);
+    filter:grayscale(50%);
     pointer-events:none;
 }
 
@@ -672,7 +676,7 @@ button.disabled{
     justify-content: center;
     gap:10px;
     font-family: var(--font);
-    border-bottom:2px solid var(--primary-dark);
+    border-bottom:4px solid hsl(var(--primary-hsl),50%,30%);
     --height:20px;
     --size:0.8rem;
 }
@@ -1042,6 +1046,7 @@ button.post{
     cursor:pointer;
     clip-path:inset(0 round 10px) !important;
     --size:30px;
+    font-weight:bold;
   /* background:linear-gradient(to right,var(--primary-lighter),var(--primary)) */
 }
 button.post .working{
@@ -1448,6 +1453,9 @@ button.post.active .working{
 /* border radius */
 .br-none{
     border-radius:none !important;
+}
+.br-inherit{
+    border-radius:inherit;
 }
 .br-0{
     border-radius:0 !important;
@@ -2133,6 +2141,7 @@ button.post.active .working{
 }
 .no-select{
     user-select:none;
+    -webkit-user-select:none;
 }
 .no-resize{
     resize: none;
@@ -2515,27 +2524,29 @@ body:has(.modal.active){
     display:flex;
 }
 .modal.active .child{
-    animation:scale-out 0.5s linear forwards;
+    animation:animate-up 0.5s linear forwards;
 }
-@keyframes scale-out{
+@keyframes animate-up{
     0%{
-        transform:scale(0.5);
+        transform:translateY(30px);
+        opacity:0;
     }
     100%{
-        transform:scale(1);
+        transform:translateY(0);
+        opacity:1;
     }
 }
 .modal .child{
-    border-radius:20px;
+    border-radius:10px;
     display:flex;
     flex-direction:column;
     gap:10px;
     background:var(--bg-light);
     padding:20px;
-    width:100%;
+    width:80%;
     max-width:500px;
     border:1px solid rgba(255,255,255,0.5);
-    box-shadow:0 10px 10px rgba(0,0,0,0.3);
+    box-shadow:0 0px 10px rgba(0,0,0,0.3);
 
 }
 
@@ -2895,7 +2906,7 @@ body:has(.modal.active){
 .toggle{
     width:50px;
     
-    background:var(--rgb-02);
+    background:var(--rgt-02);
     border-radius:10000px;
     overflow:hidden;
     padding:2px;

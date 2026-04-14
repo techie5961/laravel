@@ -1,5 +1,5 @@
 <?php
 return [
-    'logo' => asset('logos/IMG_5471.png'),
+    'logo' => 'IMG_5471.png',
     
 ];
